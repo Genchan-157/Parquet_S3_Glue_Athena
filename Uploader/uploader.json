@@ -22,8 +22,8 @@
       ]
     },
     "Tagging" : {
-        "budget-code" : "074K308601",
-        "cost-center" : "70742004"
+        "budget-code" : "budget",
+        "cost-center" : "cost"
     }
   }
 }
