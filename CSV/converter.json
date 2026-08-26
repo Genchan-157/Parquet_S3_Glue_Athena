@@ -1,0 +1,36 @@
+{
+  "Directories":{
+    "Input" : "./input",
+    "Output" : "./output",
+    "Converted" : "./converted"
+  },
+  "input":{
+    "encoding" : "utf_8",
+    "DateTimeFormat":{
+      "DateTimeDelimiter" : " ",
+      "DateDelimiter" : "/",
+      "DateOrder" : "ymd"
+    },
+    "timezone" : "+09:00",
+    "headerRows" : "1"
+  },
+  "AWS":{
+    "GlueFields":true
+  },
+  "fields":[
+    {"name":"my_date", "type":"date"},
+    {"name":"my_datetime", "type":"localTime"},
+    {"name":"my_str", "type":"string"},
+    {"name":"my_bool", "type":"bool"},
+    {"name":"my_tiny", "type":"int8_s","min":0,"max":100},
+    {"name":"my_short", "type":"int16_s","min":null,"max":0},
+    {"name":"my_int", "type":"int32_s","min":0,"max":null},
+    {"name":"my_long", "type":"int64_s","min":0,"max":null},
+    {"name":"my_float", "type":"float32_s","min":3.0,"max":null},
+    {"name":"my_double", "type":"float64_s"},
+    {"name":"my_decimal", "type":"decimal", "precision":38, "scale":4},
+    {"name":"my_array", "type":"list", "data_type":"int8"},
+    {"name":"my_map", "type":"map", "key_type":"string", "item_type":"int8", "keys_sorted": false},
+    {"name":"my_struct", "type":"struct", "fields":[{"name":"f1","type":"int32"},{"name":"f2","type":"string"}]}
+  ]
+}

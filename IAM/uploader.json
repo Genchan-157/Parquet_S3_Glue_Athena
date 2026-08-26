@@ -1,0 +1,27 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectTagging"
+            ],
+            "Resource": [
+                "arn:aws:s3:::your-bucket-name/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "glue:CreatePartition",
+                "glue:BatchCreatePartition"
+            ],
+            "Resource": [
+                "arn:aws:glue:ap-northeast-3:000011112222:catalog",
+                "arn:aws:glue:ap-northeast-3:000011112222:database/your-db-name",
+                "arn:aws:glue:ap-northeast-3:000011112222:table/your-db-name/your-table-name"
+            ]
+        }
+    ]
+}

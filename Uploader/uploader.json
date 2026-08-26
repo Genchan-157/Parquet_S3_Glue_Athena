@@ -1,0 +1,29 @@
+{
+  "Directories":{
+    "Output" : "./output",
+    "Outbox" : "./outbox",
+    "Sent" : "./sent"
+  },
+  "AWS":{
+    "GlueFields" : true,
+    "profile":"default",
+    "multipart_MB":10,
+    "BucketName" : "s3-693799858544",
+    "ObjectKeyPrefix" : "demo/",
+    "Partition" : {
+      "Database" : "dwh",
+      "Table": "demo",
+      "Keys" : [
+          {"key":"year", "value":"%Y"},
+          {"key":"month","value":"%m"},
+          {"key":"day","value":"%d"},
+          {"key":"hour","value":"%H"},
+          {"key":"minute", "value":"%M"}
+      ]
+    },
+    "Tagging" : {
+        "budget-code" : "074K308601",
+        "cost-center" : "70742004"
+    }
+  }
+}

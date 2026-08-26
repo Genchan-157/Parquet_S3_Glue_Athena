@@ -1,0 +1,68 @@
+{
+  "FileComment":"for Raspberry Pi (No Proxy)",
+  "Receiver_IP" : "127.0.0.1",
+  "localTimezone" : "+09:00",
+  "HttpProxy" : {
+      "host" : "",
+      "port" : "8080",
+      "username" : "",
+      "password" : ""
+  },
+  "Receivers" : [
+    {
+      "name" : "Receiver00",
+      "UDP_Port" : "6000",
+      "output":{
+        "intervalMinutes" : "1",
+        "MaxRowCountPerFile" : "100",
+        "suffix" : "output",
+        "fileTimezone" : "local"
+      },
+      "AWS":{
+        "S3FileSystem":{
+          "access_key" : null,
+          "secret_key" : null,
+          "region" : "ap-northeast-3",
+          "request_timeout" : null,
+          "connect_timeout" : null,
+          "background_writes" : false,
+          "role_arn":null,
+          "session_name":null,
+          "external_id":null,
+          "load_frequency":900,
+          "tls_ca_file_path":null           
+        },
+        "BucketName" : "s3-693799858544",
+        "ObjectKeyPrefix" : "demo/",
+        "Tagging" : {
+            "budget-code" : "budget",
+            "cost-center" : "cost"
+        },
+        "Partition" : {
+          "Database" : "dwh",
+          "Table": "demo",
+          "Keys" : [
+             {"key":"year", "value":"%Y"},
+             {"key":"month","value":"%m"},
+             {"key":"day","value":"%d"},
+             {"key":"hour","value":"%H"},
+             {"key":"minute", "value":"%M"}
+          ]
+        }
+      },
+      "field_repeat" : "1",
+      "fields":[
+        {"type":"utcTime","name":"utc_time"},
+        {"type":"datetime","name":"plc_time"},
+        {"type":"datetime_ms","name":"plc_time_ms"},
+        {"type":"bool32","name":["c00","c01","c02","c03","c04","c05","c06","c07","c08","c09","c0A","c0B","c0C","c0D","c0E","c0F","c10","c11","c12","c13","c14","c15","c16","c17","c18","c19","c1A","c1B","c1C","c1D","c1E","c1F"]},
+        {"type":"float32","name":"my_float","min":null,"max":null},
+        {"type":"float64","name":"my_double","min":null,"max":null},
+        {"type":"shift_jis","name":"str0","bytes":64},
+        {"type":"int64","name":"my_long","min":null,"max":null},
+        {"type":"int32","name":"my_int","min":null,"max":null},
+        {"type":"int16","name":"my_short","min":null,"max":null}
+      ]
+    }
+  ]
+}
