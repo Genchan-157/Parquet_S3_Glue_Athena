@@ -8,7 +8,7 @@
     "GlueFields" : true,
     "profile":"default",
     "multipart_MB":10,
-    "BucketName" : "s3-693799858544",
+    "BucketName" : "your-bucket-name",
     "ObjectKeyPrefix" : "demo/",
     "Partition" : {
       "Database" : "dwh",
