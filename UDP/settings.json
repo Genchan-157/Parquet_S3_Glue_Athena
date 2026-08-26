@@ -32,7 +32,7 @@
           "load_frequency":900,
           "tls_ca_file_path":null           
         },
-        "BucketName" : "s3-693799858544",
+        "BucketName" : "your-bucket-name",
         "ObjectKeyPrefix" : "demo/",
         "Tagging" : {
             "budget-code" : "budget",
