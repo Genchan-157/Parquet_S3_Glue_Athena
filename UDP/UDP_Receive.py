@@ -889,7 +889,7 @@ class Uploader:
                 TableName=self.partition["Table"],
                 PartitionInput={
                     "Values": [
-                        filedate.strftime(i["values"]) for i in self.partition["Keys"]
+                        filedate.strftime(i["value"]) for i in self.partition["Keys"]
                     ],
                     "StorageDescriptor": {
                         "Location": f"s3://{self.BucketName}/{self.objectkey[0]}{self.objectkey[1]}",
