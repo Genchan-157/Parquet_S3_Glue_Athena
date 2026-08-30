@@ -9,7 +9,7 @@
 				"s3:PutObjectTagging"
 			],
 			"Resource": [
-				"arn:aws:s3:::s3-693799858544/*"
+				"arn:aws:s3:::your-bucket-name/*"
 			]
 		},
 		{
@@ -19,9 +19,9 @@
 				"glue:BatchCreatePartition"
 			],
 			"Resource": [
-				"arn:aws:glue:ap-northeast-3:693799858544:catalog",
-				"arn:aws:glue:ap-northeast-3:693799858544:database/dwh",
-				"arn:aws:glue:ap-northeast-3:693799858544:table/dwh/demo"
+				"arn:aws:glue:ap-northeast-3:000011112222:catalog",
+				"arn:aws:glue:ap-northeast-3:000011112222:database/dwh",
+				"arn:aws:glue:ap-northeast-3:000011112222:table/dwh/demo"
 			]
 		}
 	]
