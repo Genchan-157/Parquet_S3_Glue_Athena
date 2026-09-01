@@ -1,0 +1,62 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "GlueAccess",
+            "Effect": "Allow",
+            "Action": [
+                "glue:GetDatabase",
+                "glue:GetTable",
+                "glue:GetTables",
+                "glue:BatchCreatePartition",
+                "glue:CreatePartition",
+                "glue:GetPartition",
+                "glue:GetPartitions"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "S3Buckets",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListAllMyBuckets"
+            ],
+            "Resource": [
+                "arn:aws:s3:::*"
+            ]
+        },
+        {
+            "Sid": "S3Bucket",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation",
+                "s3:AbortMultipartUpload"
+            ],
+            "Resource": [
+                "arn:aws:s3:::your-bucket-name",
+                "arn:aws:s3:::your-bucket-name/*"
+            ]
+        },
+        {
+            "Sid": "S3GetObjects",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::your-bucket-name/demo/*"
+            ]
+        },
+        {
+            "Sid": "S3PutObjects",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::your-bucket-name/compaction/*"
+            ]
+        }
+    ]
+}
